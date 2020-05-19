@@ -1,6 +1,6 @@
-import './tableHead.css';
 import React, {useState} from "react";
 import {tableHead} from "../../assets/constants";
+import './tableHead.css';
 
 const TableHead = ({handleSorting, objectKey, defaultSort = true}) => {
 

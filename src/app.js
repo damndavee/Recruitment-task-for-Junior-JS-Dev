@@ -1,32 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {fetchCompanies, fetchIncomes} from "./assets/requests";
 import './App.css';
-import Table from "./components/table/table";
-import SearchFilter from "./components/searchFilter/searchFilter";
-import {getLastMonthIncome, getAverageIncome, getTotalIncome} from "./assets/incomesOperations";
+import Table from "./components/table/Table";
+import SearchFilter from "./components/searchFilter/SearchFilter";
+import Pagination from "./components/pagination/Pagination";
+import {fetchCompanies} from "./assets/requests";
 import {sortTable} from "./assets/sorting";
 import {searchTable} from "./assets/search";
-import Pagination from "./components/pagination/pagination";
-
-const prepareData = (arr, from, to) => {
-    const result = arr.map(async (company, index) => {
-        if (!(index >= from && index < to)) return company;
-
-        const {id} = company;
-        const {incomes} = await fetchIncomes(id);
-        company.totalIncome = Number(getTotalIncome(incomes).toFixed(2));
-        company.averageIncome = Number(getAverageIncome(incomes).toFixed(2));
-        company.lastMonthIncome = Number(getLastMonthIncome(incomes).toFixed(2));
-        return company;
-    });
-
-    return Promise.all(result).then(done => {
-        return done;
-    });
-};
+import {prepareData} from "./assets/dataPreparation";
 
 const App = () => {
-
     const [data, setData] = useState([]);
     const [preparedData, setPreparedData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);

@@ -1,7 +1,7 @@
-import './table.css';
 import React from "react";
-import TableHead from "../tableHead/tableHead";
+import TableHead from "../tableHead/TableHead";
 import {tableHead} from "../../assets/constants";
+import './table.css';
 
 const Table = ({data, handleSorting}) => {
 
@@ -32,18 +32,16 @@ const Table = ({data, handleSorting}) => {
     }
 
     return (
-        <>
-            <table>
-                <thead>
-                <tr>
-                    {generateTableHead()}
-                </tr>
-                </thead>
-                <tbody>
-                {generateTableContent()}
-                </tbody>
-            </table>
-        </>
+        <table>
+            <thead>
+            <tr>
+                {generateTableHead()}
+            </tr>
+            </thead>
+            <tbody>
+            {generateTableContent()}
+            </tbody>
+        </table>
     );
 }
 

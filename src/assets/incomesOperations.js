@@ -1,21 +1,24 @@
 export const getTotalIncome = (arr) => {
     return arr.reduce((acc, curr) => {
-        return acc + Number(curr.value);
+        const {value} = curr;
+        return acc + Number(value);
     }, 0)
 }
 
 export const getAverageIncome = (arr) => {
     return arr.reduce((acc, curr) => {
-        return acc + Number(curr.value);
-    }, 0) / arr.length;
+        const {value} = curr;
+        return acc + Number(value);
+    }, 0) / arr.length || 0;
 }
 
 export const getLastMonthIncome = (arr) => {
     const lastMonth = new Date();
     lastMonth.setMonth(lastMonth.getMonth() - 1);
     return arr.reduce((acc, curr) => {
-        if (lastMonth <= new Date(curr.date)) {
-            return acc + Number(curr.value);
+        const {date, value} = curr;
+        if (lastMonth <= new Date(date)) {
+            return acc + Number(value);
         }
         return acc;
     }, 0);
