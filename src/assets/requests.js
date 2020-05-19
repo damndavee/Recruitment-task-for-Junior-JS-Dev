@@ -9,9 +9,6 @@ export function fetchCompanies() {
         .catch(error => error);
 }
 
-//"https://pokeapi.co/api/v2/pokemon"
-//"https://recruitment.hal.skygate.io/companies"
-
 export function fetchIncomes(id = 0) {
     return fetch(`https://recruitment.hal.skygate.io/incomes/${id}`)
         .then(response => {

@@ -1,17 +1,20 @@
-import React, {useState, useEffect} from 'react';
 import './table.css';
-import {fetchCompanies, fetchIncomes} from "../requests";
+import React from "react";
+import TableHead from "../tableHead/tableHead";
+import {tableHead} from "../../assets/constants";
 
-const tableHead = ['id', 'name', 'city', 'total income', 'average income', 'last month income'];
-
-
-const Table = (props) => {
-
-    const {data, handleChange} = props;
+const Table = ({data, handleSorting}) => {
 
     const generateTableHead = () => {
-        return tableHead.map((head, index) => {
-            return (<th key={index}>{head.charAt(0).toUpperCase() + head.slice(1)}</th>)
+        const keys = Object.keys(tableHead);
+        return keys.map((key, index) => {
+            return <TableHead
+                handleSorting={handleSorting}
+                objectKey={key}
+                key={key}
+                // id is being sorted after first fetch, this component has to have different value
+                defaultSort={key !== "id"}
+            />
         })
     }
 
@@ -41,8 +44,7 @@ const Table = (props) => {
                 </tbody>
             </table>
         </>
-    )
-        ;
+    );
 }
 
 export default Table;
