@@ -1,5 +1,7 @@
+import {fetchCompaniesURL, fetchIncomesURL} from "./constants";
+
 export function fetchCompanies() {
-    return fetch("https://recruitment.hal.skygate.io/companies")
+    return fetch(fetchCompaniesURL)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -10,7 +12,7 @@ export function fetchCompanies() {
 }
 
 export function fetchIncomes(id = 0) {
-    return fetch(`https://recruitment.hal.skygate.io/incomes/${id}`)
+    return fetch(`${fetchIncomesURL}${id}`)
         .then(response => {
             if (response.ok) {
                 return response.json();

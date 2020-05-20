@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import "./SearchFilter.scss";
 
 function SearchFilter({handleSearch}) {
 
@@ -10,8 +11,9 @@ function SearchFilter({handleSearch}) {
     };
 
     return (
-        <div>
+        <div className="input-container">
             <input
+                className="input-search"
                 type="text"
                 placeholder="Search"
                 value={searchTerm}

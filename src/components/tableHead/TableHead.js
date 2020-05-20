@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {tableHead} from "../../assets/constants";
+import {tableValues} from "../../assets/constants";
 import './tableHead.css';
 
 const TableHead = ({handleSorting, objectKey, defaultSort = true}) => {
@@ -16,7 +16,7 @@ const TableHead = ({handleSorting, objectKey, defaultSort = true}) => {
     return (
         <th
             onClick={handleSortChange}>
-            {tableHead[objectKey].charAt(0).toUpperCase() + tableHead[objectKey].slice(1)}
+            {tableValues[objectKey].charAt(0).toUpperCase() + tableValues[objectKey].slice(1)}
         </th>
     );
 }

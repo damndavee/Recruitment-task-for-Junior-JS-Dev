@@ -8,9 +8,15 @@ export const prepareData = (arr, from, to) => {
         const {id} = company;
         try {
             const {incomes} = await fetchIncomes(id);
-            company.totalIncome = Number(getTotalIncome(incomes).toFixed(2));
-            company.averageIncome = Number(getAverageIncome(incomes).toFixed(2));
-            company.lastMonthIncome = Number(getLastMonthIncome(incomes).toFixed(2));
+            if (!incomes) {
+                company.totalIncome = "No data!";
+                company.averageIncome = "No data!";
+                company.lastMonthIncome = "No data!";
+            } else {
+                company.totalIncome = Number(getTotalIncome(incomes).toFixed(2)) || "No data!";
+                company.averageIncome = Number(getAverageIncome(incomes).toFixed(2));
+                company.lastMonthIncome = Number(getLastMonthIncome(incomes).toFixed(2));
+            }
         } catch (e) {
             throw new Error("Something went wrong!");
         }

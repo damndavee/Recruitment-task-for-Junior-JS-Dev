@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './App.css';
+import './App.scss';
 import Table from "./components/table/Table";
 import SearchFilter from "./components/searchFilter/SearchFilter";
 import Pagination from "./components/pagination/Pagination";
@@ -7,12 +7,13 @@ import {fetchCompanies} from "./assets/requests";
 import {sortTable} from "./assets/sorting";
 import {searchTable} from "./assets/search";
 import {prepareData} from "./assets/dataPreparation";
+import MobileSorting from "./components/mobileSorting/MobileSorting";
 
 const App = () => {
     const [data, setData] = useState([]);
     const [preparedData, setPreparedData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [elementsPerPage] = useState(30);
+    const [elementsPerPage] = useState(3);
 
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -50,6 +51,7 @@ const App = () => {
     }, [secondEffectShouldRun, data, elementsPerPage]);
 
     const handleSorting = (sortBy, sort) => {
+        console.log(sortBy, sort)
         const sortedTable = [...sortTable(preparedData, sortBy, sort)];
         setPreparedData(sortedTable);
         setCurrentPage(1);
@@ -57,6 +59,8 @@ const App = () => {
 
     const handleSearch = (searchTerm) => {
         const filteredTable = [...searchTable(data, searchTerm)];
+        //console.log(data)
+        //console.log(searchTable(data, searchTerm))
         setPreparedData(filteredTable);
     }
 
@@ -71,26 +75,35 @@ const App = () => {
 
     const prep = preparedData.slice((currentPage - 1) * elementsPerPage, currentPage * elementsPerPage);
     const maxPage = Math.ceil(preparedData.length / elementsPerPage) || 1;
+
     return (
-        <>
+        <div className="mainContainer">
             {(isLoading) ? "Loading!" : null}
             {(!isLoading && error) ? "Something went wrong!" : null}
             {(!data && !isLoading) ? "No data." : null}
-            {preparedData ? (<>
-                <SearchFilter
-                    handleSearch={handleSearch}
-                />
-                <Table
-                    data={prep}
-                    handleSorting={handleSorting}
-                />
-                <Pagination
-                    handlePageChange={handlePageChange}
-                    currentPage={currentPage}
-                    maxPage={maxPage}
-                />
-            </>) : <p>No data found</p>}
-        </>
+            {(preparedData) ? (
+                <>
+                    <div className="con">
+                        <SearchFilter
+                            handleSearch={handleSearch}
+                        />
+                        <MobileSorting
+                            handleSorting={handleSorting}
+                        />
+                    </div>
+                    {(preparedData.length === 0 && !isLoading) ? "No data found." :
+                        <Table
+                            data={prep}
+                            handleSorting={handleSorting}
+                        />
+                    }
+                    <Pagination
+                        handlePageChange={handlePageChange}
+                        currentPage={currentPage}
+                        maxPage={maxPage}
+                    />
+                </>) : null}
+        </div>
     );
 }
 

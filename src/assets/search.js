@@ -1,4 +1,5 @@
 export const searchTable = (arr, searchTerm) => {
+    searchTerm = searchTerm.toLowerCase();
     return arr.filter(company => {
             const {id = "", name = "", city = "", totalIncome = "", averageIncome = "", lastMonthIncome = ""} = company;
 

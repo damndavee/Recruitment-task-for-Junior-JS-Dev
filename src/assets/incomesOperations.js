@@ -13,11 +13,20 @@ export const getAverageIncome = (arr) => {
 }
 
 export const getLastMonthIncome = (arr) => {
-    const lastMonth = new Date();
-    lastMonth.setMonth(lastMonth.getMonth() - 1);
+    const previousMonthBeginning = new Date();
+    previousMonthBeginning.setMonth(previousMonthBeginning.getMonth() - 1);
+    previousMonthBeginning.setDate(1);
+    previousMonthBeginning.setHours(0, 0, 0, 0);
+
+    const previousMonthEnd = new Date();
+    previousMonthEnd.setDate(0)
+    previousMonthEnd.setHours(23, 59, 59, 999);
+
     return arr.reduce((acc, curr) => {
         const {date, value} = curr;
-        if (lastMonth <= new Date(date)) {
+        const parsedDate = new Date(date);
+        if (previousMonthBeginning <= parsedDate &&
+            previousMonthEnd >= parsedDate) {
             return acc + Number(value);
         }
         return acc;

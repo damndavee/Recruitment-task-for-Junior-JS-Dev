@@ -1,8 +1,11 @@
-export const tableHead = {
-    id: 'id',
-    name: 'name',
-    city: 'city',
-    totalIncome: 'total income',
-    averageIncome: 'average income',
-    lastMonthIncome: 'last month income'
+export const tableValues = {
+    id: 'ID',
+    name: 'Name',
+    city: 'City',
+    totalIncome: 'Total income',
+    averageIncome: 'Average income',
+    lastMonthIncome: 'Last month income'
 };
+
+export const fetchCompaniesURL = "https://recruitment.hal.skygate.io/companies/";
+export const fetchIncomesURL = "https://recruitment.hal.skygate.io/incomes/";
