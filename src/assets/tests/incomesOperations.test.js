@@ -100,7 +100,7 @@ describe("Test incomesOperations", () => {
 
             const previousMonthEnd = new Date();
             previousMonthEnd.setDate(0)
-            previousMonthEnd.setHours(23, 59, 59, 999);
+            previousMonthEnd.setHours(24, 0, 0, 0);
 
             const beforePreviousMonth = new Date();
             beforePreviousMonth.setMonth(beforePreviousMonth.getMonth() - 2);

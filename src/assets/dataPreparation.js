@@ -13,7 +13,7 @@ export const prepareData = (arr, from, to) => {
                 company.averageIncome = "No data!";
                 company.lastMonthIncome = "No data!";
             } else {
-                company.totalIncome = Number(getTotalIncome(incomes).toFixed(2)) || "No data!";
+                company.totalIncome = (Number(getTotalIncome(incomes).toFixed(2)));
                 company.averageIncome = Number(getAverageIncome(incomes).toFixed(2));
                 company.lastMonthIncome = Number(getLastMonthIncome(incomes).toFixed(2));
             }

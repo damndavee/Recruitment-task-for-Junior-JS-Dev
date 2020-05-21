@@ -1,6 +1,3 @@
-import {fetchCompaniesURL} from "../constants";
-
-const fetchMock = require('fetch-mock');
 import {fetchIncomes, fetchCompanies} from "../requests";
 
 describe('Test companies fetching', () => {
@@ -18,19 +15,14 @@ describe('Test companies fetching', () => {
 
 describe('Test companies income fetching', () => {
     it('Fetched data has needed information', async () => {
-        const companies = fetchCompanies();
-        companies.map(async company => {
-            const {id} = company;
-            const income = await fetchIncomes(id);
-            company.income
-        })
+        const companies = await fetchCompanies();
+        const randomIndex = Math.round(Math.random() * (companies.length));
+        const randomIDFromCompanies = companies[randomIndex].id;
+        const incomes = await fetchIncomes(randomIDFromCompanies);
+        const responseHasRequiredValues =
+            incomes.hasOwnProperty("id") &&
+            incomes.hasOwnProperty("incomes");
 
-
-        const correctData = response.filter(company => {
-            const {id, name, city} = company;
-            return id && name && city;
-        });
-
-        expect(response).toEqual(correctData);
+        expect(responseHasRequiredValues).toEqual(true);
     });
 });

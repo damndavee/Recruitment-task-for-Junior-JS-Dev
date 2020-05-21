@@ -13,7 +13,7 @@ const Table = ({data, handleSorting}) => {
                 objectKey={key}
                 key={key}
                 // id is being sorted after first fetch, this component has to have different value
-                defaultSort={key !== "id"}
+                defaultSort={key === "id"}
             />
         })
     }

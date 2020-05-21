@@ -1,6 +1,6 @@
-export const sortTable = (arr, sortBy, sort = true) => {
+export const sortTable = (arr, sortBy, ascending = true) => {
     return arr.sort((a, b) => {
-        if (!sort) {
+        if (ascending) {
             if (a[sortBy] > b[sortBy]) return 1;
             if (a[sortBy] < b[sortBy]) return -1;
         } else {
@@ -9,4 +9,4 @@ export const sortTable = (arr, sortBy, sort = true) => {
         }
         return 0;
     });
-}
+};

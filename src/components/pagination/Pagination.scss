@@ -7,6 +7,29 @@
     padding: 5px;
     margin: 5px;
     cursor: pointer;
+    background: none;
+    color: #3969bd;
+    border: 2px solid #3969bd;
+    width: 8rem;
+    transition: 0.35s;
+
+    &:hover {
+      color: #fff;
+      box-shadow: inset 8rem 0 0 0 #3969bd;
+    }
+
+    &:active {
+      transition: 0.1s;
+      transform: translateY(3px);
+    }
+
+    &:disabled,
+    &[disabled] {
+      border: 1px solid #313131;
+      background: #cdcdcd;
+      color: #313131;
+      pointer-events: none;
+    }
   }
 
   .page-indicator {
@@ -14,5 +37,4 @@
     height: 40px;
     line-height: 40px;
   }
-
 }

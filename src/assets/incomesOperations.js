@@ -3,14 +3,14 @@ export const getTotalIncome = (arr) => {
         const {value} = curr;
         return acc + Number(value);
     }, 0)
-}
+};
 
 export const getAverageIncome = (arr) => {
     return arr.reduce((acc, curr) => {
         const {value} = curr;
         return acc + Number(value);
     }, 0) / arr.length || 0;
-}
+};
 
 export const getLastMonthIncome = (arr) => {
     const previousMonthBeginning = new Date();
@@ -20,7 +20,7 @@ export const getLastMonthIncome = (arr) => {
 
     const previousMonthEnd = new Date();
     previousMonthEnd.setDate(0)
-    previousMonthEnd.setHours(23, 59, 59, 999);
+    previousMonthEnd.setHours(24, 0, 0, 0);
 
     return arr.reduce((acc, curr) => {
         const {date, value} = curr;
@@ -31,4 +31,4 @@ export const getLastMonthIncome = (arr) => {
         }
         return acc;
     }, 0);
-}
+};

@@ -1,4 +1,9 @@
-@media (min-width: 560px) {
+.mobile-sort {
+  padding: 6px;
+  margin: 5px 0;
+}
+
+@media (min-width: 700px) {
   .mobile-sort {
     display: none;
   }

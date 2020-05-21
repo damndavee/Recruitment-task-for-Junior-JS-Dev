@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import {tableValues} from "../../assets/constants";
-import './tableHead.css';
+import './TableHead.scss';
 
-const TableHead = ({handleSorting, objectKey, defaultSort = true}) => {
+const TableHead = ({handleSorting, objectKey, defaultSort = false}) => {
 
-    // true means ascending, false descending
     const [sort, setSort] = useState(defaultSort);
 
     const handleSortChange = () => {
@@ -14,9 +13,11 @@ const TableHead = ({handleSorting, objectKey, defaultSort = true}) => {
     }
 
     return (
-        <th
-            onClick={handleSortChange}>
-            {tableValues[objectKey].charAt(0).toUpperCase() + tableValues[objectKey].slice(1)}
+        <th>
+            <button
+                className="btn btn__table--head"
+                onClick={handleSortChange}>
+                {tableValues[objectKey]}</button>
         </th>
     );
 }
