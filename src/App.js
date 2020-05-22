@@ -64,9 +64,8 @@ const App = () => {
     }
 
     const handlePageChange = (value) => {
-        if (currentPage + value > data.length / elementsPerPage ||
-            currentPage + value < 1 ||
-            currentPage + value > lastPage) {
+        if (currentPage + value > lastPage ||
+            currentPage + value < 1) {
             return;
         }
         setCurrentPage(currentPage + value);
@@ -80,27 +79,25 @@ const App = () => {
             {(isLoading) ? "Loading!" : null}
             {(!isLoading && error) ? "Something went wrong!" : null}
             {(!data && !isLoading) ? "No data." : null}
-            <>
-                <div className="userInput-container">
-                    <SearchFilter
-                        handleSearch={handleSearch}
-                    />
-                    <MobileSorting
-                        handleSorting={handleSorting}
-                    />
-                </div>
-                {(preparedData.length === 0 && !isLoading) ? "No data found." :
-                    <Table
-                        data={prep}
-                        handleSorting={handleSorting}
-                    />
-                }
-                <Pagination
-                    handlePageChange={handlePageChange}
-                    currentPage={currentPage}
-                    lastPage={lastPage}
+            <div className="userInput-container">
+                <SearchFilter
+                    handleSearch={handleSearch}
                 />
-            </>
+                <MobileSorting
+                    handleSorting={handleSorting}
+                />
+            </div>
+            {(preparedData.length === 0 && !isLoading) ? "No data found." :
+                <Table
+                    data={prep}
+                    handleSorting={handleSorting}
+                />
+            }
+            <Pagination
+                handlePageChange={handlePageChange}
+                currentPage={currentPage}
+                lastPage={lastPage}
+            />
         </div>
     );
 }
