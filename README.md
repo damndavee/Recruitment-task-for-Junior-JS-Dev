@@ -9,6 +9,12 @@ Which displays:
 - Average income
 - Last month income
 
+## Top-secret Libraries and Technologies
+- React.js
+- React Hooks
+- SCSS
+- Jest (for testing)
+
 ## Requirements
 
 1. Fetch and display data in columns described above
