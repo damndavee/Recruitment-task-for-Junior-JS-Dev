@@ -17,7 +17,8 @@ const TableHead = ({handleSorting, objectKey, defaultSort = false}) => {
             <button
                 className="btn btn__table--head"
                 onClick={handleSortChange}>
-                {tableValues[objectKey]}</button>
+                {tableValues[objectKey]}
+            </button>
         </th>
     );
 }

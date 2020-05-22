@@ -28,7 +28,6 @@ export const prepareData = (arr, from, to) => {
         } catch (e) {
             throw new Error("Something went wrong!");
         }
-
         return company;
     });
 

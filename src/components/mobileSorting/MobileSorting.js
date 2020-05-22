@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import "./MobileSorting.scss";
 import {tableValues} from "../../assets/constants";
+import "./MobileSorting.scss";
 
 function MobileSorting({handleSorting}) {
 

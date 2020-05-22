@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import './App.scss';
 import Table from "./components/table/Table";
 import SearchFilter from "./components/searchFilter/SearchFilter";
 import Pagination from "./components/pagination/Pagination";
@@ -8,7 +7,7 @@ import {fetchCompanies} from "./assets/requests";
 import {sortTable} from "./assets/sorting";
 import {searchTable} from "./assets/search";
 import {prepareData} from "./assets/dataPreparation";
-
+import './App.scss';
 
 const App = () => {
     const [data, setData] = useState([]);
