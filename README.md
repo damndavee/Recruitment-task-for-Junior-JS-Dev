@@ -10,6 +10,7 @@ Which displays:
 - Last month income
 
 ##Requirements
+
 1. Fetch and display data in columns described above
 2. Create your own implementation of table, Bootstrap, Material etc. are forbidden
 3. Data should be sortable by ascending or descending order
