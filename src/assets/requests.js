@@ -1,6 +1,11 @@
 import {fetchCompaniesURL, fetchIncomesURL} from "./constants";
 
-export function fetchCompanies() {
+/**
+ * Fetch companies from API
+ * @function fetchCompanies
+ * @return {Promise} return fetched data
+ */
+export const fetchCompanies = () => {
     return fetch(fetchCompaniesURL)
         .then(response => {
             if (response.ok) {
@@ -11,7 +16,13 @@ export function fetchCompanies() {
         .catch(error => error);
 }
 
-export function fetchIncomes(id = 0) {
+/**
+ * Fetch income of companies from API
+ * @function fetchIncomes
+ * @Param {Number} id - fetch incomes of companies by given id
+ * @return {Promise} return fetched incomes
+ */
+export const fetchIncomes = (id) => {
     return fetch(`${fetchIncomesURL}${id}`)
         .then(response => {
             if (response.ok) {

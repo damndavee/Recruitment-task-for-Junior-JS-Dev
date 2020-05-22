@@ -60,6 +60,7 @@ const App = () => {
     const handleSearch = (searchTerm) => {
         const filteredTable = [...searchTable(data, searchTerm)];
         setPreparedData(filteredTable);
+        setCurrentPage(1);
     }
 
     const handlePageChange = (value) => {

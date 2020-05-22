@@ -1,3 +1,11 @@
+/**
+ * Filter input array by search term
+ * @function searchTable
+ * @param {Array}  arr - array of objects
+ * @param {String} searchTerm
+ * @return {Array} return - filtered array
+ */
+
 export const searchTable = (arr, searchTerm) => {
     searchTerm = searchTerm.toLowerCase();
     return arr.filter(company => {

@@ -134,6 +134,36 @@ describe("Test incomesOperations", () => {
             ];
 
             expect(getLastMonthIncome(INPUT)).toEqual(180);
-        })
+        });
+
+        it('Returns 0 if last month incomes equal 0', () => {
+            const beforePreviousMonth = new Date();
+            beforePreviousMonth.setMonth(beforePreviousMonth.getMonth() - 10);
+
+            const INPUT = [
+                {
+                    id: 1,
+                    value: 10,
+                    date: beforePreviousMonth,
+                },
+                {
+                    id: 2,
+                    value: 20,
+                    date: beforePreviousMonth,
+                },
+                {
+                    id: 3,
+                    value: 15,
+                    date: beforePreviousMonth,
+                },
+                {
+                    id: 4,
+                    value: 35,
+                    date: beforePreviousMonth,
+                }
+            ];
+
+            expect(getLastMonthIncome(INPUT)).toEqual(0);
+        });
     });
 })
