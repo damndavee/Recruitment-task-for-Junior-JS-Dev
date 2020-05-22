@@ -9,7 +9,7 @@ Which displays:
 - Average income
 - Last month income
 
-##Requirements
+## Requirements
 
 1. Fetch and display data in columns described above
 2. Create your own implementation of table, Bootstrap, Material etc. are forbidden
