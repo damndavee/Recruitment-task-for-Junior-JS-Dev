@@ -1,3 +1,5 @@
+
+Application can be seen live at [LIVE](https://razor9876.github.io/Recruitment-task-for-Junior-JS-Dev/)
 # Top-secret application
 
 Top-secret is a web application created  to display tabular data about companies.
