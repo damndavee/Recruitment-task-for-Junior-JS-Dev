@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/razor9876/Recruitment-task-for-Junior-JS-Dev/static/css/main.ad0759dd.chunk.css",
+    "main.js": "/razor9876/Recruitment-task-for-Junior-JS-Dev/static/js/main.72feb936.chunk.js",
+    "main.js.map": "/razor9876/Recruitment-task-for-Junior-JS-Dev/static/js/main.72feb936.chunk.js.map",
+    "runtime-main.js": "/razor9876/Recruitment-task-for-Junior-JS-Dev/static/js/runtime-main.3279ed6d.js",
+    "runtime-main.js.map": "/razor9876/Recruitment-task-for-Junior-JS-Dev/static/js/runtime-main.3279ed6d.js.map",
+    "static/js/2.763c6c03.chunk.js": "/razor9876/Recruitment-task-for-Junior-JS-Dev/static/js/2.763c6c03.chunk.js",
+    "static/js/2.763c6c03.chunk.js.map": "/razor9876/Recruitment-task-for-Junior-JS-Dev/static/js/2.763c6c03.chunk.js.map",
+    "index.html": "/razor9876/Recruitment-task-for-Junior-JS-Dev/index.html",
+    "precache-manifest.e2bbb2666e99c4d884959e3f848c6bdc.js": "/razor9876/Recruitment-task-for-Junior-JS-Dev/precache-manifest.e2bbb2666e99c4d884959e3f848c6bdc.js",
+    "service-worker.js": "/razor9876/Recruitment-task-for-Junior-JS-Dev/service-worker.js",
+    "static/css/main.ad0759dd.chunk.css.map": "/razor9876/Recruitment-task-for-Junior-JS-Dev/static/css/main.ad0759dd.chunk.css.map",
+    "static/js/2.763c6c03.chunk.js.LICENSE.txt": "/razor9876/Recruitment-task-for-Junior-JS-Dev/static/js/2.763c6c03.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3279ed6d.js",
+    "static/js/2.763c6c03.chunk.js",
+    "static/css/main.ad0759dd.chunk.css",
+    "static/js/main.72feb936.chunk.js"
+  ]
+}
